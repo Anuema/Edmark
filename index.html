@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nous nous consacrons entièrement à la réussite des personnes dans tous les aspects de leur santé et de leur bien-être global.">
+  <meta property="og:title" content="Edmark Shopping Kinshasa">
+  <meta property="og:description" content="Nous nous consacrons entièrement à la réussite des personnes dans tous les aspects de leur santé et de leur bien-être global.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anuema.github.io/Edmark/">
+  <meta name="theme-color" content="#006400">
   <title>Edmark Shopping Kinshasa</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #f8f8f8;
       color: #333;
+      padding-bottom: 84px; /* place pour la barre de contact fixe */
     }
     header {
       background-color: #006400;
@@ -29,18 +37,45 @@
       padding: 20px;
     }
     .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
     .product {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 64px;
       background-color: white;
+      color: #333;
+      text-decoration: none;
       padding: 15px;
       border-radius: 8px;
+      border: 1px solid #e3e3e3;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      flex: 1 1 45%;
+      font-weight: bold;
     }
+    .product::after {
+      content: "";
+      flex: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #25D366 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z'/%3E%3C/svg%3E") center / 18px no-repeat;
+    }
+    .product:active { transform: scale(0.98); }
+    .btn {
+      display: inline-block;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-left: 4px;
+    }
+    .btn-wa { background-color: #25D366; }
+    .btn-fb { background-color: #1877F2; }
     footer {
       background-color: #006400;
       color: white;
@@ -48,9 +83,41 @@
       padding: 15px;
       margin-top: 40px;
     }
-    a {
+    header a, footer a {
       color: #fff;
       text-decoration: underline;
+    }
+    /* Barre de contact toujours visible en bas de l'écran */
+    .contact-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      gap: 10px;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+    .contact-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 52px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .contact-bar .wa { background-color: #25D366; flex: 2; }
+    .contact-bar .tel { background-color: #006400; }
+    .contact-bar svg { width: 24px; height: 24px; fill: #fff; }
+    @media (min-width: 700px) {
+      .products { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
@@ -64,33 +131,52 @@
   <div class="container">
     <h2>Nos Produits</h2>
     <div class="products">
-      <div class="product">1. Shake Off Phyto Fiber</div>
-      <div class="product">2. MRT Complex</div>
-      <div class="product">3. Bio Elixir</div>
-      <div class="product">4. Splina Chlorophyll Liquid</div>
-      <div class="product">5. Bubble C</div>
-      <div class="product">6. Ginseng Coffee</div>
-      <div class="product">7. Red Yeast Coffee</div>
-      <div class="product">8. Red Bubble Tea</div>
-      <div class="product">9. Cocollagen</div>
-      <div class="product">10. Splina Chlorophyll Soap</div>
-      <div class="product">11. Café Troïka</div>
-      <div class="product">12. Café Power Black</div>
-      <div class="product">13. Café 73</div>
-      <div class="product">14. Mocha</div>
-      <div class="product">15. Very Berry</div>
-      <div class="product">16. Produits Edcare</div>
-      <div class="product">17. Troikani</div>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">1. Shake Off Phyto Fiber</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">2. MRT Complex</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">3. Bio Elixir</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">4. Splina Chlorophyll Liquid</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">5. Bubble C</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">6. Ginseng Coffee</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">7. Red Yeast Coffee</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">8. Red Bubble Tea</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">9. Cocollagen</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">10. Splina Chlorophyll Soap</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">11. Café Troïka</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">12. Café Power Black</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">13. Café 73</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">14. Mocha</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">15. Very Berry</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">16. Produits Edcare</a>
+      <a class="product" href="https://wa.me/243811127593" target="_blank" rel="noopener">17. Troikani</a>
     </div>
 
-    <h2>Contact</h2>
-    <p>Contactez-nous sur WhatsApp : <a href="https://wa.me/243811127593" target="_blank">Cliquez ici</a></p>
-    <p>Suivez-nous sur Facebook : <a href="https://www.facebook.com/share/15cMpQyV46/?mibextid=wwXIfr" target="_blank">Voir la page</a></p>
+    <h2 id="contact">Contact</h2>
+    <p>Contactez-nous sur WhatsApp : <a class="btn btn-wa" href="https://wa.me/243811127593" target="_blank" rel="noopener">Cliquez ici</a></p>
+    <p>Suivez-nous sur Facebook : <a class="btn btn-fb" href="https://www.facebook.com/share/15cMpQyV46/?mibextid=wwXIfr" target="_blank" rel="noopener">Voir la page</a></p>
   </div>
 
   <footer>
     &copy; 2025 Edmark Shopping Kinshasa - Tous droits réservés
   </footer>
+
+  <nav class="contact-bar" aria-label="Contact">
+    <a class="wa" href="https://wa.me/243811127593" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+      WhatsApp
+    </a>
+    <a class="tel" href="tel:+243811127593">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Appeler
+    </a>
+  </nav>
+
+  <script>
+    // Chaque produit ouvre WhatsApp avec le nom du produit déjà écrit.
+    document.querySelectorAll('.product').forEach(function (el) {
+      var nom = el.textContent.replace(/^\s*\d+\.\s*/, '').trim();
+      el.href = 'https://wa.me/243811127593?text=' + encodeURIComponent('Bonjour, je suis intéressé(e) par : ' + nom);
+    });
+  </script>
 
 </body>
 </html>
